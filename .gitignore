@@ -19,5 +19,7 @@ composer.lock
 modules/*
 public/*
 
+plugins/rainlab/builder
+
 # for netbeans
 nbproject

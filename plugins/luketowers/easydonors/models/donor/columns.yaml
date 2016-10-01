@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: 'luketowers.easydonors::lang.models.donor.name'
+        type: partial
+        path: $/luketowers/easydonors/models/donor/column.name.htm
+        sortable: true
+        searchable: true
