@@ -9,10 +9,6 @@ description = "Default layout"
         <link href="{{ [
             'assets/less/app.less'
         ]|theme }}" rel="stylesheet">
-    </head>
-    <body>
-        {% page %}
-
         <script src="{{ [
             'assets/js/jquery.js',
 
@@ -35,5 +31,8 @@ description = "Default layout"
             'assets/js/app.js']|theme }}"></script>
 
         {% scripts %}
+    </head>
+    <body>
+        {% page %}
     </body>
 </html>
