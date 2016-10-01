@@ -1,3 +1,9 @@
+# Queen City <hack> 2016
+
+Project developed as a part of the Queen City <hack> by Team #ghost. 
+
+Donor / donation management system built for Special Olympics Saskatchewan on top of the OctoberCMS framework.
+
 <p align="center">
     <img src="https://github.com/octobercms/october/blob/master/themes/demo/assets/images/october.png?raw=true" alt="October" width="25%" height="25%" />
 </p>
