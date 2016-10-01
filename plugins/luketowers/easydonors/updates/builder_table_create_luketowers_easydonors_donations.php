@@ -12,7 +12,6 @@ class BuilderTableCreateLuketowersEasydonorsDonations extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('donor_id')->unsigned();
-            $table->integer('address_id')->unsigned();
             $table->string('donor_name'); // NOTE: Original donor name stored here in case of changes to base donor record after the fact
             $table->dateTime('date')->nullable();
             $table->decimal('amount', 9, 2); // NOTE: Supports up to 9,999,999.99
@@ -26,11 +25,7 @@ class BuilderTableCreateLuketowersEasydonorsDonations extends Migration
 	        $table->foreign('donor_id')
 	        	->references('id')
 	        	->on('luketowers_easydonors_donors');
-	        	
-	        $table->foreign('address_id')
-	        	->references('id')
-	        	->on('luketowers_easydonors_donor_addresses');
-        });
+	        });
     }
     
     public function down()

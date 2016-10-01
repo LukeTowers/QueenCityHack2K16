@@ -86,6 +86,7 @@
 	        'date' => 'Donation Date',
 	        'placeholder_amount' => '100.00',
 	        'notes' => 'Notes',
+	        'name' => 'On behalf of',
         ],
         'donationaddress' => [
 	        'label' => 'Donation Address',

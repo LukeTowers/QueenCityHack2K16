@@ -75,8 +75,8 @@ class DonationAddress extends Model
 			$donationAddress->country = $donorAddress->country;
 			$donationAddress->data = $donorAddress->data;
 			$donationAddress->donation_id = $donation->id;
-			throw new \ApplicationException($donationAddress->donation_id);
 			$donationAddress->save();
+			
 			return $donationAddress;
 		}
 	}

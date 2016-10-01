@@ -13,6 +13,6 @@ address:
 donations:
     label: 'luketowers.easydonors::lang.models.donation.label'
     list: $/luketowers/easydonors/models/donation/columns.yaml
-    form: $/luketowers/easydonors/models/donation/fields.yaml
+    form: $/luketowers/easydonors/models/donor/donation.fields.yaml
     view:
         toolbarButtons: create|delete

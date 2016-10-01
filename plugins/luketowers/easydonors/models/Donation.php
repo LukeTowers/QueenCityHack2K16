@@ -1,6 +1,7 @@
 <?php namespace LukeTowers\EasyDonors\Models;
 
 use Model;
+use Carbon;
 use ApplicationException;
 use LukeTowers\EasyDonors\Models\DonationAddress as DonationAddressModel;
 
@@ -34,11 +35,11 @@ class Donation extends Model
 	 */
 	public $belongsTo = [
 		'donor' => ['LukeTowers\EasyDonors\Models\Donor', 'key' => 'donor_id'],
-		'address' => ['LukeTowers\EasyDonors\Models\DonationAddress', 'key' => 'address_id'],
 	];
 	
     public $hasOne  = [
 	    'receipt' => ['LukeTowers\EasyDonors\Models\Receipt', 'key' => 'donation_id'],
+	    'address' => ['LukeTowers\EasyDonors\Models\DonationAddress', 'key' => 'donation_id'],
     ];
     
     public function getCurrencyOptions() {
@@ -49,6 +50,18 @@ class Donation extends Model
     }
     
     public function beforeSave() {
+	    if (empty($this->donor_name)) {
+		    $this->attributes['donor_name'] = $this->donor->getFullName();
+	    }
+	    
+	    if (empty($this->date)) {
+		    $this->attributes['date'] = Carbon\Carbon::now()->toDateTimeString();
+	    }
+    }
+    
+    public function afterSave() {
+	    // NOTE: afterSave gets called twice for some stupid reason without reloading the relationships the second time round, look into implementing this functionality a different way as we're forced to manually refresh the relationship checking to see if it exists
+	    $this->load('address');
 	    if (!count($this->address)) {
 		    if (count($this->donor->address)) {
 			    DonationAddressModel::createFromDonorAddress($this->donor->address, $this);

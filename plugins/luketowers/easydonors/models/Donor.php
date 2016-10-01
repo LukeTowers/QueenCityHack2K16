@@ -59,6 +59,9 @@ class Donor extends Model
 	    $this->attributes = array_merge($this->attributes, [$attribute => $value]);
     }
     
+    public function getFullName() {
+	    return $this->name . ' ' . $this->surname;
+    }
     
     /*
 	 * Mutators for accessing connected user object values instead of this object's built in values
