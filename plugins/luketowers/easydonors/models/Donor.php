@@ -63,6 +63,15 @@ class Donor extends Model
 	    return $this->name . ' ' . $this->surname;
     }
     
+    // TODO: Add support for currencies
+    public function getTotalDonationsAttribute() {
+	    return '$' . number_format($this->donations->sum('amount'), 2);
+    }
+    
+    public function getAvgDonationsAttribute() {
+	    return '$' . number_format($this->donations->avg('amount'), 2);
+    }
+    
     /*
 	 * Mutators for accessing connected user object values instead of this object's built in values
 	 */

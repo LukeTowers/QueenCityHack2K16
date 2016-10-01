@@ -9,3 +9,13 @@ columns:
         path: $/luketowers/easydonors/models/donor/column.name.htm
         sortable: true
         searchable: true
+        
+    total_donations:
+        label: 'luketowers.easydonors::lang.models.donor.total_donations'
+        type: number
+        sortable: false
+        
+    avg_donations:
+        label: 'luketowers.easydonors::lang.models.donor.avg_donations'
+        type: number
+        sortable: false

@@ -17,5 +17,9 @@ class DonationForm extends ComponentBase
     {
         return [];
     }
+    
+    public function init() {
+	    $this->addJs('https://js.stripe.com/v2/');
+    }
 
 }

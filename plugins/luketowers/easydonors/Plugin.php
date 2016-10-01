@@ -70,4 +70,16 @@ class Plugin extends PluginBase
             ]
         ];
     }
+    
+     /**
+     * Registers any front-end components implemented in this plugin.
+     *
+     * @return array
+     */
+    public function registerComponents()
+    {
+        return [
+            'LukeTowers\EasyDonors\Components\DonationForm' => 'donationForm',
+        ];
+    }
 }

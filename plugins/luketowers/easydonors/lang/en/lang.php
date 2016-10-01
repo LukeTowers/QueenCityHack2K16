@@ -66,6 +66,8 @@
 	        'surname' => 'Surname',
 	        'email' => 'Email',
 	        'accepts_marketing' => 'Accepts Marketing',
+	        'total_donations' => 'Total Donations',
+	        'avg_donations' => 'Average Donation',
         ],
         'donoraddress' => [
 	        'label' => 'Donor Address',

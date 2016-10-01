@@ -178,7 +178,7 @@ return [
     |
     */
 
-    'enableAssetDeepHashing' => false,
+    'enableAssetDeepHashing' => true,
 
     /*
     |--------------------------------------------------------------------------
