@@ -1,6 +1,8 @@
 <?php namespace LukeTowers\EasyDonors\Models;
 
 use Model;
+use ApplicationException;
+use LukeTowers\EasyDonors\Models\DonationAddress as DonationAddressModel;
 
 /**
  * Model
@@ -44,5 +46,15 @@ class Donation extends Model
 		    'CAD' => 'Canadian dollars (CAD)',
 		    'USD' => 'American dollars (USD)',
 	    ];
+    }
+    
+    public function beforeSave() {
+	    if (!count($this->address)) {
+		    if (count($this->donor->address)) {
+			    DonationAddressModel::createFromDonorAddress($this->donor->address, $this);
+		    } else {
+			    throw new ApplicationException('No address to pull from');
+		    }
+	    }
     }
 }

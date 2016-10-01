@@ -17,7 +17,6 @@ class BuilderTableCreateLuketowersEasydonorsDonors extends Migration
             $table->string('email')->nullable();
             $table->json('data')->nullable();
             $table->timestamps();
-            $table->dateTime('deleted_at');
         });
         
         Schema::table('luketowers_easydonors_donors', function($table)

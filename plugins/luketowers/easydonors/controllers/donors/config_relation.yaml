@@ -3,11 +3,12 @@
 # ===================================
 
 address:
+    deferredBinding: true
     label: 'luketowers.easydonors::lang.models.donoraddress.label'
     list: $/luketowers/easydonors/models/donoraddress/columns.yaml
     form: $/luketowers/easydonors/models/donoraddress/fields.yaml
     view:
-        toolbarButtons: false
+        toolbarButtons: create|update
         
 donations:
     label: 'luketowers.easydonors::lang.models.donation.label'

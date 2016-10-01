@@ -13,6 +13,8 @@ class Donors extends Controller
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
     ];
+    
+    public $requiredPermissions = ['luketowers.easydonors.donors.*'];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';

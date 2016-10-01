@@ -3,20 +3,19 @@
         'name' => 'Easy Donors',
         'description' => 'Manage donors and donations'
     ],
-    'components' => [
-	    'general' => [
-		    'properties' => [
-			    'slug'             => ':record slug',
-			    'slug_description' => 'Slug for the :record',
-		    ],
+    'permissions' => [
+	    'tab' => 'Easy Donors',
+	    'donors' => [
+		    'view' => 'View Donors',
+		    'manage' => 'Manage Donors',
 	    ],
-	    'courseManager' => [
-		    'name'        => 'Courses Component',
-		    'description' => 'Displays courses, lessons, & materials',
+	    'donations' => [
+		    'view' => 'View Donations',
+		    'manage' => 'Manage Donations',
 	    ],
     ],
     'navigation' => [
-	    'donor_manager' => [
+	    'easydonors' => [
 		    'main_label' => 'Donors',
 		    'donations'  => 'Donations',
 		    'receipts'   => 'Receipts',
@@ -84,7 +83,7 @@
 	        'donor_name' => 'Donor Name',
 	        'amount' => 'Amount',
 	        'currency' => 'Currency',
-	        'date' => 'Date',
+	        'date' => 'Donation Date',
 	        'placeholder_amount' => '100.00',
 	        'notes' => 'Notes',
         ],

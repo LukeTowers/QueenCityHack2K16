@@ -13,6 +13,11 @@ class DonorAddress extends Model
      * Validation
      */
     public $rules = [
+	    'address'     => 'required',
+	    'city'        => 'required',
+	    'province'    => 'required',
+	    'country'     => 'required',
+	    'postal_code' => 'required',
     ];
 
     /**
@@ -42,8 +47,19 @@ class DonorAddress extends Model
 	
 	public function getProvinceOptions($key, $value) {
 		return [
-			'CA' => 'Canada',
-			'US' => 'United States',
+			'SK'	=>	'Saskatchewan', // Default for hackathon; TODO: Clean up, provide smarter way to provide regions based on country selection
+			'AB'	=>	'Alberta',
+			'BC'	=>	'British Columbia',
+			'MB'	=>	'Manitoba',
+			'NB'	=>	'New Brunswick',
+			'NL'	=>	'Newfoundland & Labrador',
+			'NS'	=>	'Nova Scotia',
+			'NT'	=>	'Northwest Territories',
+			'NU'	=>	'Nunavut',
+			'ON'	=>	'Ontario',
+			'PE'	=>	'Prince Edward Island',
+			'QC'	=>	'Quebec',
+			'YT'	=>	'Yukon',
 		];
 	}
 }

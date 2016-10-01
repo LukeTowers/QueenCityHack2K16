@@ -11,7 +11,7 @@ class BuilderTableCreateLuketowersEasydonorsDonorAddresses extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('donor_id')->unsigned();
+            $table->integer('donor_id')->unsigned()->nullable();
             $table->string('address');
             $table->string('address_2')->nullable();
             $table->string('city');
